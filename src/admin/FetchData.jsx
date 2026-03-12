@@ -1,11 +1,20 @@
 import axios from "axios";
 import React,{useEffect,useState} from "react";
 import './admin.css'
+import { useNavigate } from "react-router-dom"
 
 export default function FetchData() {
 
+  const navigate = useNavigate()
   const [data,setData] = useState([])
   const [error,setError] = useState("")
+
+  useEffect(()=>{
+    const isAdmin = sessionStorage.getItem("isAdmin") === "true"
+    if(!isAdmin){
+      navigate("/admin-login")
+    }
+  },[])
 
   useEffect(()=>{
 

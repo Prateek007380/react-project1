@@ -1,5 +1,6 @@
 import React,{useState} from "react";
 import './style.css'
+import { useNavigate } from "react-router-dom"
 
 export default function AdminLogin() {
 
@@ -7,6 +8,8 @@ export default function AdminLogin() {
     username:"",
     password:""
   })
+  
+  const navigate = useNavigate()
 
   const handleChange=(e)=>{
 
@@ -26,7 +29,7 @@ export default function AdminLogin() {
     if(formData.username==="admin" && formData.password==="admin")
     {
       sessionStorage.setItem("isAdmin","true")
-      window.location.href="/#/admin/home"
+      navigate("/admin/home")
     }
     else
     {

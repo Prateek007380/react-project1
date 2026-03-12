@@ -8,7 +8,7 @@ export default function AdminHome() {
   useEffect(()=>{
     const isAdmin = sessionStorage.getItem("isAdmin") === "true"
     if(!isAdmin){
-      navigate("/#/admin-login")
+      navigate("/admin-login")
     }
   },[])
 

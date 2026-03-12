@@ -1,8 +1,17 @@
 import React,{useState,useEffect} from "react";
+import { useNavigate } from "react-router-dom"
 
 export default function RegisteredStudents() {
 
+  const navigate = useNavigate()
   const [students,setStudents] = useState([])
+
+  useEffect(()=>{
+    const isAdmin = sessionStorage.getItem("isAdmin") === "true"
+    if(!isAdmin){
+      navigate("/admin-login")
+    }
+  },[])
 
   useEffect(()=>{
 
