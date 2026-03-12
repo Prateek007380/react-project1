@@ -20,6 +20,17 @@ function App() {
 
   },[])
 
+  // Listen for hash changes to update admin status
+  useEffect(()=>{
+    const handleHashChange = () => {
+      const adminStatus = sessionStorage.getItem("isAdmin") === "true"
+      setIsAdmin(adminStatus)
+    }
+
+    window.addEventListener("hashchange", handleHashChange)
+    return () => window.removeEventListener("hashchange", handleHashChange)
+  },[])
+
   if (isAdmin === null) {
     return <div></div>
   }
