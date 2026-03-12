@@ -26,7 +26,7 @@ export default function AdminLogin() {
     if(formData.username==="admin" && formData.password==="admin")
     {
       sessionStorage.setItem("isAdmin","true")
-      window.location.href="/admin/home"
+      window.location.href="/#/admin/home"
     }
     else
     {

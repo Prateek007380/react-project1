@@ -6,7 +6,7 @@ export default function AdminLogout() {
   useEffect(()=>{
 
     sessionStorage.removeItem("isAdmin")
-    window.location.href="/"
+    window.location.href="/#/"
 
   },[])
 
