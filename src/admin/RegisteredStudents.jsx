@@ -5,13 +5,6 @@ export default function RegisteredStudents() {
   const [students,setStudents] = useState([])
 
   useEffect(()=>{
-    const isAdmin = sessionStorage.getItem("isAdmin") === "true"
-    if(!isAdmin){
-      window.location.hash = "/admin-login"
-    }
-  },[])
-
-  useEffect(()=>{
 
     const users = JSON.parse(localStorage.getItem("users")) || []
 

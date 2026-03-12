@@ -11,13 +11,12 @@ import AdminLogout from "./admin/AdminLogout";
 
 function App() {
 
-  const [isAdmin, setIsAdmin] = useState(null)
+  const [isAdmin, setIsAdmin] = useState(false)
 
+  // Check initial admin status
   useEffect(()=>{
-
     const adminStatus = sessionStorage.getItem("isAdmin") === "true"
     setIsAdmin(adminStatus)
-
   },[])
 
   // Listen for hash changes to update admin status
@@ -30,10 +29,6 @@ function App() {
     window.addEventListener("hashchange", handleHashChange)
     return () => window.removeEventListener("hashchange", handleHashChange)
   },[])
-
-  if (isAdmin === null) {
-    return <div></div>
-  }
 
   return (
      

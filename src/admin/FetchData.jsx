@@ -8,13 +8,6 @@ export default function FetchData() {
   const [error,setError] = useState("")
 
   useEffect(()=>{
-    const isAdmin = sessionStorage.getItem("isAdmin") === "true"
-    if(!isAdmin){
-      window.location.hash = "/admin-login"
-    }
-  },[])
-
-  useEffect(()=>{
 
     axios.get("https://jsonplaceholder.typicode.com/posts")
     .then((response)=>{
