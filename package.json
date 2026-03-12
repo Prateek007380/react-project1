@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/Prateek007380/react-project1",
+  "homepage": "https://Prateek007380.github.io/react-project1/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

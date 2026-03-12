@@ -1,15 +1,13 @@
 import React,{useEffect} from "react";
 import './admin.css'
-import { useNavigate } from "react-router-dom"
 
 export default function AdminLogout() {
-
-  const navigate = useNavigate()
 
   useEffect(()=>{
 
     sessionStorage.removeItem("isAdmin")
-    navigate("/")
+    // Use hash-based navigation for GitHub Pages compatibility
+    window.location.hash = "/"
 
   },[])
 

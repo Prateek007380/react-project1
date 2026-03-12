@@ -1,6 +1,5 @@
 import React,{useState} from "react";
 import './style.css'
-import { useNavigate } from "react-router-dom"
 
 export default function AdminLogin() {
 
@@ -8,8 +7,6 @@ export default function AdminLogin() {
     username:"",
     password:""
   })
-  
-  const navigate = useNavigate()
 
   const handleChange=(e)=>{
 
@@ -29,7 +26,8 @@ export default function AdminLogin() {
     if(formData.username==="admin" && formData.password==="admin")
     {
       sessionStorage.setItem("isAdmin","true")
-      navigate("/admin/home")
+      // Use hash-based navigation for GitHub Pages compatibility
+      window.location.hash = "/admin/home"
     }
     else
     {
