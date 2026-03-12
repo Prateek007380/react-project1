@@ -26,8 +26,7 @@ export default function AdminLogin() {
     if(formData.username==="admin" && formData.password==="admin")
     {
       sessionStorage.setItem("isAdmin","true")
-      // Use hash-based navigation for GitHub Pages compatibility
-      window.location.hash = "/admin/home"
+      window.location.href = "/react-project1/admin/home"
     }
     else
     {

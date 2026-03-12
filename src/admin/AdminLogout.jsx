@@ -6,8 +6,7 @@ export default function AdminLogout() {
   useEffect(()=>{
 
     sessionStorage.removeItem("isAdmin")
-    // Use hash-based navigation for GitHub Pages compatibility
-    window.location.hash = "/"
+    window.location.href = "/react-project1/"
 
   },[])
 

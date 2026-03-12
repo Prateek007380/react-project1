@@ -1,4 +1,4 @@
-import { HashRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
@@ -19,20 +19,9 @@ function App() {
     setIsAdmin(adminStatus)
   },[])
 
-  // Listen for hash changes to update admin status
-  useEffect(()=>{
-    const handleHashChange = () => {
-      const adminStatus = sessionStorage.getItem("isAdmin") === "true"
-      setIsAdmin(adminStatus)
-    }
-
-    window.addEventListener("hashchange", handleHashChange)
-    return () => window.removeEventListener("hashchange", handleHashChange)
-  },[])
-
   return (
      
-    <HashRouter>
+    <BrowserRouter basename="/react-project1">
     <h1 style={{textAlign:"center"}}> LAB EXAM </h1>
 
     {isAdmin ? (
@@ -63,7 +52,7 @@ function App() {
       <Route path="/admin/logout" element={<AdminLogout/>}/>
     </Routes>
 
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
