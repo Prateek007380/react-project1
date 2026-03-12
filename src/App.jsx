@@ -1,4 +1,4 @@
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
@@ -26,7 +26,7 @@ function App() {
 
   return (
      
-    <BrowserRouter>
+    <HashRouter>
     <h1 style={{textAlign:"center"}}> LAB EXAM </h1>
 
     {isAdmin ? (
@@ -57,7 +57,7 @@ function App() {
       <Route path="/admin/logout" element={<AdminLogout/>}/>
     </Routes>
 
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
